@@ -32,7 +32,6 @@ object Conversion{
         val width:Int = img.getWidth
         val height:Int = img.getHeight
         
-
         //define image array
         var image = Array.ofDim[Pixel](height,width)
 
@@ -43,6 +42,11 @@ object Conversion{
             }
         }
         image
+    }
+
+
+    def convertToImage(img:Array[Array[Pixel]]):BufferedImage = {
+
     }
 
 }
