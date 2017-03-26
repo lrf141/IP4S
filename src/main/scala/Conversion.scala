@@ -18,7 +18,7 @@ object Conversion{
 
     private[this] val base = 0xff
 
-    //ピクセルの値をタプルの要素として色別に変換
+    //ピクセルの値をpixelの要素として色別に変換
     private def convertToPixel(value:Int):Pixel = {
         val alpha = ( value >>> 24 ) & base
         val red   = ( value >>> 16 ) & base
