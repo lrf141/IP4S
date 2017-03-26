@@ -7,7 +7,7 @@ object MyBuild extends Build{
         file("."),
         settings = Seq(
             version := "1.0.0",
-            scalaVersion := "2.11.6",
+            scalaVersion := "2.12.0",
             libraryDependencies ++= Seq(
                 "org.scalatest" %% "scalatest" % "3.0.1" % "test",
                 "junit" % "junit" % "4.11" % "test"
