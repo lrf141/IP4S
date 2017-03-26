@@ -15,12 +15,12 @@ import java.io.File
 
 trait CoreFunction{
     
-    def read(name:String):BufferedImage
-    def read(file:File):BufferedImage
+    def read(name:String):Array[Array[Tuple4[Int,Int,Int,Int]]]
+    def read(file:File):Array[Array[Tuple4[Int,Int,Int,Int]]]
 
     def write(name:String):Unit
     def write(file:File):Unit
 
-    //まだ実装しない
+    //まだ実装しない2017/03/26
     //def show(name:Any):Unit
 }

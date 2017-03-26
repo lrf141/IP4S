@@ -15,13 +15,33 @@ import java.awt.image.BufferedImage
 import java.io.File
 
 import ip4s.function.CoreFunction
+import ip4s.core.Conversion
 
 class IPLcore extends CoreFunction{
 
-    override def read(name:String):BufferedImage=ImageIO.read(new File(name))
-    override def read(file:File):BufferedImage=ImageIO.read(file)
+    override def read(name:String):Array[Array[Tuple4[Int,Int,Int,Int]]] = {
+        
+        //load image 
+        val img:BufferedImage = ImageIO.read(new File(name))
 
-    override def write(name:String):Unit={}
-    override def write(file:File):Unit={}
+        //convert to Array
+        Conversion.convertToArray(img)
+    }
+
+    override def read(file:File):Array[Array[Tuple4[Int,Int,Int,Int]]] = {
+         //load image 
+        val img:BufferedImage = ImageIO.read(file)
+        
+        //convert to Array
+        Conversion.convertToArray(img)
+    }
+
+    override def write(name:String):Unit={
+
+    }
+
+    override def write(file:File):Unit={
+
+    }
 
 }
