@@ -11,10 +11,17 @@ package ip4s
 package core
 
 import javax.imageio.ImageIO
+import java.awt.image.BufferedImage
 import java.io.File
 
 import ip4s.function.CoreFunction
 
-class IPLcore{
+class IPLcore extends CoreFunction{
+
+    override def read(name:String):BufferedImage=ImageIO.read(new File(name))
+    override def read(file:File):BufferedImage=ImageIO.read(file)
+
+    override def write(name:String):Unit={}
+    override def write(file:File):Unit={}
 
 }

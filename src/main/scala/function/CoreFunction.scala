@@ -9,16 +9,18 @@
 package ip4s
 package function
 
+import javax.imageio.ImageIO
+import java.awt.image.BufferedImage
 import java.io.File
 
 trait CoreFunction{
     
-    //return value change later
-    def read(name:String):Unit
-    def read(file:File):Unit
+    def read(name:String):BufferedImage
+    def read(file:File):BufferedImage
 
     def write(name:String):Unit
     def write(file:File):Unit
 
-    def show(name:Any):Unit
+    //まだ実装しない
+    //def show(name:Any):Unit
 }
