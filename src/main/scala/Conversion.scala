@@ -36,6 +36,7 @@ object Conversion{
         //define image array
         var image = Array.ofDim[Pixel](height,width)
 
+        //set pixel value
         for(h <- 0 to height){
             for(w <- 0 to width){
                 image(h)(w) = convertToPixel(img.getRGB(w,h))
