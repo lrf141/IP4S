@@ -13,10 +13,12 @@ import javax.imageio.ImageIO
 import java.awt.image.BufferedImage
 import java.io.File
 
+import ip4s.core.Pixel
+
 trait CoreFunction{
     
-    def read(name:String):Array[Array[Tuple4[Int,Int,Int,Int]]]
-    def read(file:File):Array[Array[Tuple4[Int,Int,Int,Int]]]
+    def read(name:String):Array[Array[Pixel]]
+    def read(file:File):Array[Array[Pixel]]
 
     def write(name:String):Unit
     def write(file:File):Unit

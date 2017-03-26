@@ -12,31 +12,33 @@ package core
 
 import java.awt.image.BufferedImage
 
+import ip4s.core.Pixel
+
 object Conversion{
 
     private[this] val base = 0xff
 
     //ピクセルの値をタプルの要素として色別に変換
-    private def convertToTuple(value:Int):(Int,Int,Int,Int) = {
+    private def convertToPixel(value:Int):Pixel = {
         val alpha = ( value >>> 24 ) & base
         val red   = ( value >>> 16 ) & base
         val green = ( value >>> 8  ) & base
         val blue  = ( value        ) & base
-        (alpha,red,green,blue)
+        new Pixel(alpha,red,green,blue)
     }
 
-    def convertToArray(img:BufferedImage):Array[Array[Tuple4[Int,Int,Int,Int]]] = {
+    def convertToArray(img:BufferedImage):Array[Array[Pixel]] = {
         //get image info
         val width:Int = img.getWidth
         val height:Int = img.getHeight
         
 
         //define image array
-        var image = Array.ofDim[Tuple4[Int,Int,Int,Int]](height,width)
+        var image = Array.ofDim[Pixel](height,width)
 
         for(h <- 0 to height){
             for(w <- 0 to width){
-                image(h)(w) = convertToTuple(img.getRGB(w,h))
+                image(h)(w) = convertToPixel(img.getRGB(w,h))
             }
         }
         image
