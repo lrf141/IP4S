@@ -1,5 +1,5 @@
 /*
-*  IP4S/src/main/scala/Conversion.scala
+*  IP4S/src/main/scala/core/Conversion.scala
 * 
 *  Copyright (C) 2017 K.Takeuchi
 *

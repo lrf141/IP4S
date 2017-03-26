@@ -1,5 +1,5 @@
 /*
-*  IP4S/src/main/scala/IPLcore.scala
+*  IP4S/src/main/scala/core//IPLcore.scala
 * 
 *  Copyright (C) 2017 K.Takeuchi
 *
@@ -26,7 +26,7 @@ class IPLcore extends CoreFunction{
         = Conversion.convertToArray( ImageIO.read( file ) )
 
     override def write(name:String):Unit={
-
+        
     }
 
     override def write(file:File):Unit={

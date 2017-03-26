@@ -1,5 +1,5 @@
 /*
-*  IP4S/src/main/scala/Pixel.scala
+*  IP4S/src/main/scala/core/Pixel.scala
 * 
 *  Copyright (C) 2017 K.Takeuchi
 *
