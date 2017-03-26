@@ -1,5 +1,5 @@
 # IP4S
-Image processing wrapper for Scala.  
+Image processing simple wrapper for Scala.  
 It is based on Java's ImageIO class.
 
 # Supported format
