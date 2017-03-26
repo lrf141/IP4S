@@ -3,8 +3,15 @@ Image processing library of Scala.
 It is based on Java's ImageIO class.
 
 # Supported format
+- BMP
+- GIF
+- JPEG
+- JPG
+- PNG 
+- WBMP
 - bmp
-- jpeg
-- wbmp
-- png
 - gif
+- jpeg
+- jpg
+- png
+- wbmp
