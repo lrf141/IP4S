@@ -19,22 +19,9 @@ import ip4s.core.{Conversion,Pixel}
 
 class IPLcore extends CoreFunction{
 
-    override def read(name:String):Array[Array[Pixel]] = {
-        
-        //load image 
-        val img:BufferedImage = ImageIO.read(new File(name))
+    override def read(name:String):Array[Array[Pixel]] = Conversion.convertToArray( ImageIO.read( new File(name) ) )
 
-        //convert to Array
-        Conversion.convertToArray(img)
-    }
-
-    override def read(file:File):Array[Array[Pixel]] = {
-         //load image 
-        val img:BufferedImage = ImageIO.read(file)
-        
-        //convert to Array
-        Conversion.convertToArray(img)
-    }
+    override def read(file:File):Array[Array[Pixel]] = Conversion.convertToArray( ImageIO.read( file ) )
 
     override def write(name:String):Unit={
 
