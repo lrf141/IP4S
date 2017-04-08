@@ -22,7 +22,5 @@ trait CoreFunction{
 
     def write(name:String):Unit
     def write(file:File):Unit
-
-    //まだ実装しない2017/03/26
-    //def show(name:Any):Unit
+    
 }
