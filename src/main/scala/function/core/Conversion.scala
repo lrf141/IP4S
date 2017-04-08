@@ -27,9 +27,11 @@ object Conversion{
         new Pixel(alpha,red,green,blue)
     }
 
+    //Pixelクラスの保持する値を元に16進数値に変換する
     private def convertToHexValue(pixel: Pixel):Int 
         = pixel.alpha << 24 | pixel.red << 16 | pixel.green | pixel.blue
 
+    //画像を二次元配列化する
     def convertToArray(img:BufferedImage):Array[Array[Pixel]] = {
         //get image info
         val width:Int = img.getWidth
@@ -48,6 +50,7 @@ object Conversion{
     }
 
 
+    //二次元配列化されている値を画像として生成する
     def convertToImage(img:Array[Array[Pixel]]):BufferedImage = {
         
         //get size
