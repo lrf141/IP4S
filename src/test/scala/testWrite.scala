@@ -12,8 +12,9 @@ class TestWrite extends FunSpec{
     
     describe("spec"){
         it("test1"){
-            val img = (new IPLcore).read(new File("src/test/resources/Lenna.png"))
-            (new IPLcore).write("lenna2")
+            val ipl = new IPLcore
+            val img = ipl.read(new File("src/test/resources/Lenna.png"))
+            ipl.write("lenna2")
         }
     }
 }
