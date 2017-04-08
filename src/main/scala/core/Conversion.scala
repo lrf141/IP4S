@@ -27,6 +27,9 @@ object Conversion{
         new Pixel(alpha,red,green,blue)
     }
 
+    private def convertToHexValue(pixel: Pixel):Int 
+        = pixel.alpha << 24 | pixel.red << 16 | pixel.green | pixel.blue
+
     def convertToArray(img:BufferedImage):Array[Array[Pixel]] = {
         //get image info
         val width:Int = img.getWidth
@@ -46,7 +49,23 @@ object Conversion{
 
 
     def convertToImage(img:Array[Array[Pixel]]):BufferedImage = {
+        
+        //get size
+        val width:Int = img(0).length
+        val height:Int = img.length
 
+        //only ARGB yet
+        val write:BufferedImage 
+            = new BufferedImage(width,height,BufferedImage.TYPE_INT_ARGB)
+
+        for(h <- 0 to height-1){
+            for(w <- 0 to width-1){
+                //translate into image
+                write.setRGB(w,h,convertToHexValue(img(h)(w)));
+            }
+        }
+        write
     }
+
 
 }
