@@ -29,7 +29,7 @@ object Conversion{
 
     //Pixelクラスの保持する値を元に16進数値に変換する
     private def convertToHexValue(pixel: Pixel):Int 
-        = pixel.alpha << 24 | pixel.red << 16 | pixel.green | pixel.blue
+        = pixel.alpha << 24 | pixel.red << 16 | pixel.green << 8 | pixel.blue
 
     //画像を二次元配列化する
     def convertToArray(img:BufferedImage):Array[Array[Pixel]] = {
