@@ -19,24 +19,35 @@ import ip4s.core.{Conversion,Pixel}
 
 class IPLcore extends CoreFunction{
 
+    //読み込んだ画像を二次元配列として保持する
     private[this] var image:Array[Array[Pixel]] = null
 
+    //画像を二次元配列として読み込む
     override def read(name:String):Array[Array[Pixel]] = {
+        
         this.image = Conversion.convertToArray( ImageIO.read( new File(name) ) )
         image
+        
     }
 
     override def read(file:File):Array[Array[Pixel]] = {
+        
         this.image = Conversion.convertToArray( ImageIO.read( file ) )
         image
+
     }
 
+
+
+    //二次元配列化されている画像データを画像として出力する
     override def write(name:String):Unit = {
+
         try{
             ImageIO.write( Conversion.convertToImage(this.image), "png", (new File(name+".png")) )
         }catch{
-            case e:Exception => println("error")
+            case e:Exception => e.printStackTrace()
         }
+
     } 
 
     override def write(file:File):Unit={
@@ -44,9 +55,10 @@ class IPLcore extends CoreFunction{
         try{
             ImageIO.write( Conversion.convertToImage(this.image), "png", file )
         }catch{
-            case e:Exception => println("error")
+            case e:Exception => e.printStackTrace()
         }
 
     }
+
 
 }

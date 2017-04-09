@@ -20,11 +20,13 @@ object Conversion{
 
     //ピクセルの値をpixelの要素として色別に変換
     private def convertToPixel(value:Int):Pixel = {
-        val alpha = ( value >>> 24 ) & base
-        val red   = ( value >>> 16 ) & base
-        val green = ( value >>> 8  ) & base
+        
+        val alpha = ( value >>> 24 )
+        val red   = ( value >>  16 ) & base
+        val green = ( value >>  8  ) & base
         val blue  = ( value        ) & base
         new Pixel(alpha,red,green,blue)
+
     }
 
     //Pixelクラスの保持する値を元に16進数値に変換する
