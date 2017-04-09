@@ -16,6 +16,7 @@ import java.io.File
 
 import ip4s.function.CoreFunction
 import ip4s.core.{Conversion,Pixel}
+import ip4s.ImageViewer.View
 
 class IPLcore extends CoreFunction{
 
@@ -59,6 +60,12 @@ class IPLcore extends CoreFunction{
         }
 
     }
+
+    //open image viewer
+    def show( image:Array[Array[Pixel]] ):Unit = {
+        val win:View = new View(Conversion.convertToImage(image),image(0).size,image.size);
+        win.show();
+    } 
 
 
 }
