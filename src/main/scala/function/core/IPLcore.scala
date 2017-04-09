@@ -33,7 +33,7 @@ class IPLcore extends CoreFunction{
 
     override def write(name:String):Unit = {
         try{
-            ImageIO.write( Conversion.convertToImage(this.image), "png", (new File(name+"png")) )
+            ImageIO.write( Conversion.convertToImage(this.image), "png", (new File(name+".png")) )
         }catch{
             case e:Exception => println("error")
         }
