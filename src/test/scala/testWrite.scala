@@ -18,5 +18,12 @@ class TestWrite extends FunSpec{
             val file = new File("./lenna2.png")
             file.exists() should be (true)
         }
+        it("test2"){
+            val ipl = new IPLcore
+            val img = ipl.read(new File("src/test/resources/Lenna.png"))
+            ipl.write(new File("./lenna3.png"),img)
+            val file = new File("./lenna3.png")
+            file.exists() should be (true)
+        }
     }
 }
