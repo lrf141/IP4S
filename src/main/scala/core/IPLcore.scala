@@ -61,11 +61,5 @@ class IPLcore extends CoreFunction{
 
     }
 
-    //open image viewer
-    def show( image:Array[Array[Pixel]] ):Unit = {
-        val win:View = new View(Conversion.convertToImage(image),image(0).size,image.size);
-        win.show();
-    } 
-
 
 }
