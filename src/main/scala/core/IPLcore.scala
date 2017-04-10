@@ -20,41 +20,30 @@ import ip4s.ImageViewer.View
 
 class IPLcore extends CoreFunction{
 
-    //読み込んだ画像を二次元配列として保持する
-    private[this] var image:Array[Array[Pixel]] = null
-
     //画像を二次元配列として読み込む
-    override def read(name:String):Array[Array[Pixel]] = {
-        
-        this.image = Conversion.convertToArray( ImageIO.read( new File(name) ) )
-        image
-        
-    }
+    override def read(name:String):Array[Array[Pixel]] 
+        = Conversion.convertToArray( ImageIO.read( new File(name) ) )
 
-    override def read(file:File):Array[Array[Pixel]] = {
-        
-        this.image = Conversion.convertToArray( ImageIO.read( file ) )
-        image
-
-    }
+    override def read(file:File):Array[Array[Pixel]] 
+        = Conversion.convertToArray( ImageIO.read( file ) )
 
 
 
     //二次元配列化されている画像データを画像として出力する
-    override def write(name:String):Unit = {
+    override def write(name:String, image:Array[Array[Pixel]]):Unit = {
 
         try{
-            ImageIO.write( Conversion.convertToImage(this.image), "png", (new File(name+".png")) )
+            ImageIO.write( Conversion.convertToImage(image), "png", (new File(name+".png")) )
         }catch{
             case e:Exception => e.printStackTrace()
         }
 
     } 
 
-    override def write(file:File):Unit={
+    override def write(file:File, image:Array[Array[Pixel]]):Unit={
 
         try{
-            ImageIO.write( Conversion.convertToImage(this.image), "png", file )
+            ImageIO.write( Conversion.convertToImage(image), "png", file )
         }catch{
             case e:Exception => e.printStackTrace()
         }

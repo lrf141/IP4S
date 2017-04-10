@@ -20,7 +20,7 @@ trait CoreFunction{
     def read(name:String):Array[Array[Pixel]]
     def read(file:File):Array[Array[Pixel]]
 
-    def write(name:String):Unit
-    def write(file:File):Unit
+    def write(name:String, image:Array[Array[Pixel]]):Unit
+    def write(file:File, image:Array[Array[Pixel]]):Unit
     
 }
