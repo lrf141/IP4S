@@ -16,7 +16,6 @@ import java.io.File
 
 import ip4s.function.CoreFunction
 import ip4s.core.{Conversion,Pixel}
-import ip4s.ImageViewer.View
 
 class IPLcore extends CoreFunction{
 
