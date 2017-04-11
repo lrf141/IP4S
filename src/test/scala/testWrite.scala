@@ -6,13 +6,14 @@ import org.junit.Test
 import scala.io.Source
 
 import ip4s.core._
+import ip4s.IPL
 import java.io.File
 
 class TestWrite extends FunSpec{
     
     describe("spec"){
         it("image write test that based array"){
-            val ipl = new IPLcore
+            val ipl = new IPL
             val img = ipl.read(new File("src/test/resources/Lenna.png"))
             //pass string value
             ipl.write("lenna2",img)
@@ -20,7 +21,7 @@ class TestWrite extends FunSpec{
             file.exists() should be (true)
         }
         it("image write test2 that based array"){
-            val ipl = new IPLcore
+            val ipl = new IPL
             val img = ipl.read(new File("src/test/resources/Lenna.png"))
             //pass File value
             ipl.write(new File("./lenna3.png"),img)
