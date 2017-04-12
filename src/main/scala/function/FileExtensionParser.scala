@@ -6,12 +6,34 @@
 *  A class that implements a function for determining the file extension
 */
 
-import scala.util.parsing.combinator._
+object FileExtensionParser{
 
-object FileExtensionParser extends JavaTokenParsers{
+    val dot:String = "."
+    val extensionNameList:List[String] = List("gif", "jpeg", "jpg", "png", "wbmp")
+    
 
-    def dot             = "."
-    def extension_lower = "gif" | "jpeg" | "jpg" | "png" | "wbmp"
-    def extension_upper = "GIF" | "JPEG" | "JPG" | "PNG" | "WBMP"
+    /*
+    get file extension as String
+    return file extension name as String
+    */
+    def parse( file_name:String ):String = {
+
+        //split filename by dot
+        val split:Array[String] = file_name.split(this.dot)
+
+        //get last value in split Array[String]
+        val maybe_extension:String = split.last
+
+        //search file extension
+        var find_flag:Boolean = false
+        for(extension <- this.extensionNameList){
+            if( extension.equals( maybe_extension ) )
+                find_flag = true
+        }
+
+        //return file extension
+        if(find_flag) maybe_extension else "none"
+            
+    }
 
 }
