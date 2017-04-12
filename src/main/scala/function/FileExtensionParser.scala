@@ -6,6 +6,9 @@
 *  A class that implements a function for determining the file extension
 */
 
+package ip4s
+package function
+
 object FileExtensionParser{
 
     val dot:String = "."
