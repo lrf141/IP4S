@@ -11,7 +11,7 @@ package function
 
 object FileExtensionParser{
 
-    val dot:String = "."
+    val dot:Char = '.'
     val extensionNameList:List[String] = List("gif", "jpeg", "jpg", "png", "wbmp")
     
 
