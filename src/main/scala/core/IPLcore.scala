@@ -14,7 +14,7 @@ import javax.imageio.ImageIO
 import java.awt.image.BufferedImage
 import java.io.File
 
-import ip4s.function.CoreFunction
+import ip4s.function.{CoreFunction,FileExtensionParser}
 import ip4s.core.{Conversion,Pixel}
 
 class IPLcore extends CoreFunction{
@@ -31,8 +31,10 @@ class IPLcore extends CoreFunction{
     //二次元配列化されている画像データを画像として出力する
     override def write(name:String, image:Array[Array[Pixel]]):Unit = {
 
+        val extension:String = FileExtensionParser.parse(name)
+
         try{
-            ImageIO.write( Conversion.convertToImage(image), "png", (new File(name+".png")) )
+            ImageIO.write( Conversion.convertToImage(image), extension, (new File(name+"."+extension)) )
         }catch{
             case e:Exception => e.printStackTrace()
         }
@@ -41,8 +43,10 @@ class IPLcore extends CoreFunction{
 
     override def write(file:File, image:Array[Array[Pixel]]):Unit={
 
+        val extension:String = FileExtensionParser.parse(file.getName())
+
         try{
-            ImageIO.write( Conversion.convertToImage(image), "png", file )
+            ImageIO.write( Conversion.convertToImage(image), extension, file )
         }catch{
             case e:Exception => e.printStackTrace()
         }
