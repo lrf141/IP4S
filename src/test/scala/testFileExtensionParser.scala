@@ -16,5 +16,10 @@ class TestFileExtensionParser extends FunSpec{
             val name:String = "lenna.png"
             FileExtensionParser.parse(name) should be ("png")
         }
+
+        it("test file extension parser no.2"){
+            val name:String = "./lenna.jpg"
+            FileExtensionParser.parse(name) should be ("jpg")
+        }
     }
 }

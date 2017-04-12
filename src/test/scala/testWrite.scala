@@ -16,7 +16,7 @@ class TestWrite extends FunSpec{
             val ipl = new IPL
             val img = ipl.read(new File("src/test/resources/Lenna.png"))
             //pass string value
-            ipl.write("lenna2",img)
+            ipl.write("lenna2.png",img)
             val file = new File("./lenna2.png")
             file.exists() should be (true)
         }

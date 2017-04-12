@@ -34,7 +34,7 @@ class IPLcore extends CoreFunction{
         val extension:String = FileExtensionParser.parse(name)
 
         try{
-            ImageIO.write( Conversion.convertToImage(image), extension, (new File(name+"."+extension)) )
+            ImageIO.write( Conversion.convertToImage(image), extension, (new File(name)) )
         }catch{
             case e:Exception => e.printStackTrace()
         }
