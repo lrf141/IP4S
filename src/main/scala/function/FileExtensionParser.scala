@@ -6,5 +6,12 @@
 *  A class that implements a function for determining the file extension
 */
 
-object FileExtensionParser{
+import scala.util.parsing.combinator._
+
+object FileExtensionParser extends JavaTokenParsers{
+
+    def dot             = "."
+    def extension_lower = "gif" | "jpeg" | "jpg" | "png" | "wbmp"
+    def extension_upper = "GIF" | "JPEG" | "JPG" | "PNG" | "WBMP"
+
 }
