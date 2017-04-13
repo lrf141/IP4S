@@ -30,6 +30,6 @@ ipl.write("lenna2.png")
 
 # Version
 - 1.0.0
--- add read and write
--- get image as Array[Array[T]]
--- only argb
+  -- add read and write
+  -- get image as Array[Array[T]]
+  -- only argb
