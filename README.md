@@ -24,12 +24,12 @@ coming soon
 ```scala
 import ip4s.IPL
 val ipl = new IPL()
-var image = ipi.read("lenna.png") //get Array[Array[]]
+var image = ipl.read("lenna.png") //get Array[Array[]]
 ipl.write("lenna2.png")
 ```
 
 # Version
-- 1.0.0
-  -- add read and write
-  -- get image as Array[Array[T]]
-  -- only argb
+* 1.0.0
+  * add read and write
+  * get image as Array[Array[T]]
+  * only argb
