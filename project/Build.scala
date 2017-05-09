@@ -11,7 +11,8 @@ object MyBuild extends Build{
             libraryDependencies ++= Seq(
                 "org.scalatest" %% "scalatest" % "3.0.1" % "test",
                 "junit" % "junit" % "4.12" % "test"
-            )
+            ),
+            publishTo := Some(Resolver.file("IP4S",file("../"))(Patterns(true, Resolver.mavenStyleBasePattern)))
         )
     )
 }
