@@ -30,12 +30,12 @@ libraryDependencies ++= Seq(
 ```scala
 import ip4s.IPL
 val ipl = new IPL()
-var image = ipl.read("lenna.png") //get Array[Array[]]
+var image = ipl.read("lenna.png") //get Array[Array[Pixel]]
 ipl.write("lenna2.png", image)
 ```
 
 # Version
 * 1.0.0
-  * add read and write
-  * get image as Array[Array[T]]
+  * add read and write function
+  * get image as Array[Array[Pixel]]
   * only argb
