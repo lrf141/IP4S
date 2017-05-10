@@ -17,19 +17,25 @@ It is based on Java's ImageIO class.
 - wbmp
 
 # How to install
-coming soon  
+
+```scala
+resolvers += "Maven Repository on Github" at "https://lrf141.github.io/IP4S/"
+libraryDependencies ++= Seq(
+"ip4s" % "ip4s_2.12" % "version"
+)
+```
 
 # How to use
 
 ```scala
 import ip4s.IPL
 val ipl = new IPL()
-var image = ipl.read("lenna.png") //get Array[Array[]]
-ipl.write("lenna2.png")
+var image = ipl.read("lenna.png") //get Array[Array[Pixel]]
+ipl.write("lenna2.png", image)
 ```
 
 # Version
 * 1.0.0
-  * add read and write
-  * get image as Array[Array[T]]
+  * add read and write function
+  * get image as Array[Array[Pixel]]
   * only argb
